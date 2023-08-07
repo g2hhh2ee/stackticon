@@ -84,7 +84,11 @@ const Input = ({ stacks, handler }: InputProps) => {
         onChange={(e, value) => onStackChange(value)}
         filterSelectedOptions
         renderInput={(params) => <TextField {...params} placeholder='Choose Your Stacks!' />}
-        renderTags={(stacks) => <DragContainer array={stacks} updateArray={changeStackOrder} />}
+        // renderTags={(stacks) => <DragContainer array={stacks} updateArray={changeStackOrder} />}
+        renderTags={(value) => <DragContainer array={value} updateArray={changeStackOrder} />}
+        // renderTags={(value, getTagProps) => (
+        //   <DragContainer array={value} updateArray={changeStackOrder} getTagProps={getTagProps} />
+        // )}
         filterOptions={createFilterOptions({
           limit: 100,
         })}
